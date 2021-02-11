@@ -85,6 +85,7 @@ public:
 		chosenRows = new bool[rows];		
 
 		for(int i = 0; i < rows; i++){
+                        chosenRows[i] = false;
 			if(!first->select(i)){
 				setSelection(i);	
 			}
@@ -118,10 +119,12 @@ public:
 
         Select_And(Select* first, Select* second){
 
+
                 rows = first->getRowSize();
                 chosenRows = new bool[rows];
 
                 for(int i = 0; i < rows; i++){
+                        chosenRows[i] = false;
                         if(first->select(i) && second->select(i)){
                                 setSelection(i);
                         }
@@ -159,6 +162,7 @@ public:
                 chosenRows = new bool[rows];
 
                 for(int i = 0; i < rows; i++){
+                        chosenRows[i] = false;
                         if(first->select(i) || second->select(i)){
                                 setSelection(i);
                         }
